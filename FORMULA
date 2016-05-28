@@ -1,7 +1,7 @@
-name: cloned_interfaces
+name: pf
 version: 201605
-release: 2
+release: 1
 os: FreeBSD
 minimum_version: 2015.8
-summary: Formula for managing cloned_interfaces
-description: Formula for managing cloned_interfaces.
+summary: Formula for managing the FreeBSD firewall pf
+description: Formula for managing the FreeBSD firewall pf.

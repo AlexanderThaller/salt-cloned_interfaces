@@ -1,6 +1,21 @@
-cloned_interfaces:
-  interfaces:
-    jail_network:
-      cloned_interfaces: 'lo1'
-      inet: '10.0.0.1'
-      netmask: '255.255.255.0'
+pf:
+  variables:
+    loc_if: 'lo0'
+    ext_if: 're0'
+    jail_if: 'lo1'
+  options:
+    # reply if we block
+    block_policy: 'return'
+
+    # normalize incoming packages
+    scrub:
+      - 'in all'
+
+    skip_on:
+      - '$loc_if'
+      - '$jail_if'
+  nat:
+    enable_natting_for_jails:
+      on: '$ext_if'
+      from: '$jail_if'
+      from_network: True

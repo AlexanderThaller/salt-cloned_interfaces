@@ -1,7 +1,0 @@
-{% set datamap = salt['pillar.get']('cloned_interfaces') %}
-cloned_interfaces="{% for interface, args in datamap.interfaces.items() %}{{ args['cloned_interfaces'] }}{% endfor %}"
-
-{% for interface, args in datamap.interfaces.items() %}
-# {{ interface }}
-ifconfig_{{ args['cloned_interfaces'] }}_alias0="inet {{ args['inet'] }} netmask {{ args['netmask'] }}"
-{% endfor %}

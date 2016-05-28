@@ -1,2 +1,2 @@
-# salt-cloned_interfaces
-Formula for managing cloned_interfaces
+# salt-pf
+Formula for managing the FreeBSD firewall pf
